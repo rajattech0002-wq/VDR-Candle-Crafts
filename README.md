@@ -188,7 +188,7 @@ Example: A video showing flickering candles, wax pouring, or candle lighting amb
 
 - **WhatsApp**: https://wa.me/c/917983158309
 - **Phone**: +91 7983158309
-- **Email**: info@vdrcandlecrafts.com
+- **Email**: vdrcandlecrafts@gmail.com
 - **Instagram**: [@vdr_candlecrafts](https://www.instagram.com/vdr_candlecrafts/)
 
 ---
