@@ -1,12 +1,28 @@
 // Load Products from JSON
 function loadProducts() {
+    console.log('Loading products...');
     fetch('products.json')
-        .then(response => response.json())
+        .then(response => {
+            console.log('Response status:', response.status);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log('Products data loaded:', data);
             const productsGrid = document.getElementById('productsGrid');
-            const products = data.products;
+            console.log('Products grid element:', productsGrid);
             
-            products.forEach(product => {
+            if (!productsGrid) {
+                console.error('productsGrid element not found!');
+                return;
+            }
+            
+            const products = data.products;
+            console.log('Number of products:', products.length);
+            
+            products.forEach((product, index) => {
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 const price = product.original_price ? `<span class="original-price">₹${product.original_price}</span> ₹${product.price}` : `₹${product.price}`;
@@ -23,7 +39,9 @@ function loadProducts() {
                     </div>
                 `;
                 productsGrid.appendChild(productCard);
+                console.log(`Product ${index + 1} added: ${product.name}`);
             });
+            console.log('All products loaded successfully');
         })
         .catch(error => console.error('Error loading products:', error));
 }
