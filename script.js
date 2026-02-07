@@ -111,7 +111,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! We will respond via WhatsApp soon. You can also follow us on Instagram @vdr_candlecrafts for updates!');
+            
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            // Build WhatsApp message
+            const whatsappMessage = `Hello VDR Candle Crafts!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+            
+            // Redirect to WhatsApp
+            const whatsappURL = `https://wa.me/917983158309?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form
             this.reset();
         });
     }
