@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (hamburger) {
         hamburger.addEventListener('click', function() {
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            navMenu.classList.toggle('active');
         });
     }
     
@@ -103,7 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth' });
-                navMenu.style.display = 'none';
+                // Close mobile menu after clicking
+                if (navMenu) {
+                    navMenu.classList.remove('active');
+                }
             }
         });
     });

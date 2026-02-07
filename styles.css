@@ -509,6 +509,30 @@ body {
 
     .nav-menu {
         display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #6d28d9;
+        flex-direction: column;
+        padding: 20px;
+        gap: 1rem;
+        width: 100%;
+        z-index: 999;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 10px 0;
+        font-size: 1.1rem;
+    }
+
+    .navbar .container {
+        position: relative;
     }
 
     .hero {
