@@ -26,8 +26,9 @@ function loadProducts() {
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 const price = product.original_price ? `<span class="original-price">₹${product.original_price}</span> ₹${product.price}` : `₹${product.price}`;
+                const imageUrl = `media/product_images/${product.id}.png`;
                 productCard.innerHTML = `
-                    <div class="product-image">${product.icon}</div>
+                    <div class="product-image"><img src="${imageUrl}" alt="${product.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2220%22%3E${product.icon}%3C/text%3E%3C/svg%3E'"></div>
                     <div class="product-info">
                         <h3>${product.name}</h3>
                         <p class="product-category">${product.category}</p>
