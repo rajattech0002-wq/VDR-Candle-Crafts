@@ -1,0 +1,180 @@
+{
+  "brand": {
+    "name": "VDR Candle Crafts",
+    "tagline": "Handcrafted Candles for Every Moment",
+    "description": "Premium handmade candles using only the finest natural ingredients",
+    "whatsapp": "+91 7983158309",
+    "whatsapp_catalog": "https://wa.me/c/917983158309",
+    "instagram": "https://www.instagram.com/vdr_candlecrafts/",
+    "instagram_handle": "@vdr_candlecrafts",
+    "email": "info@vdrcandlecrafts.com",
+    "location": "India",
+    "founded": 2024
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "Lavender Dream",
+      "category": "Aromatherapy",
+      "price": 399,
+      "currency": "INR",
+      "description": "Soothing lavender fragrance perfect for relaxation and stress relief.",
+      "icon": "🌸",
+      "benefits": ["Relaxation", "Stress Relief", "Better Sleep"],
+      "burn_time": "30-40 hours",
+      "wax_type": "Soy Wax",
+      "size": "200g",
+      "in_stock": true
+    },
+    {
+      "id": 2,
+      "name": "Vanilla Bliss",
+      "category": "Traditional",
+      "price": 349,
+      "currency": "INR",
+      "description": "Classic vanilla scent that creates a warm and inviting atmosphere.",
+      "icon": "🕯️",
+      "benefits": ["Comfort", "Warmth", "Nostalgia"],
+      "burn_time": "30-40 hours",
+      "wax_type": "Soy Wax",
+      "size": "200g",
+      "in_stock": true
+    },
+    {
+      "id": 3,
+      "name": "Rose Garden",
+      "category": "Floral",
+      "price": 449,
+      "currency": "INR",
+      "description": "Elegant rose fragrance blended with subtle notes of jasmine.",
+      "icon": "🌹",
+      "benefits": ["Romance", "Elegance", "Luxury"],
+      "burn_time": "35-45 hours",
+      "wax_type": "Soy Wax",
+      "size": "250g",
+      "in_stock": true
+    },
+    {
+      "id": 4,
+      "name": "Ocean Breeze",
+      "category": "Fresh",
+      "price": 379,
+      "currency": "INR",
+      "description": "Refreshing coastal scent with citrus and sea salt notes.",
+      "icon": "🌊",
+      "benefits": ["Refreshment", "Energy Boost", "Clarity"],
+      "burn_time": "30-40 hours",
+      "wax_type": "Soy Wax",
+      "size": "200g",
+      "in_stock": true
+    },
+    {
+      "id": 5,
+      "name": "Cinnamon Spice",
+      "category": "Warm",
+      "price": 389,
+      "currency": "INR",
+      "description": "Warm and comforting blend of cinnamon, clove, and vanilla.",
+      "icon": "✨",
+      "benefits": ["Warmth", "Comfort", "Homely Feel"],
+      "burn_time": "30-40 hours",
+      "wax_type": "Soy Wax",
+      "size": "200g",
+      "in_stock": true
+    },
+    {
+      "id": 6,
+      "name": "Eucalyptus Fresh",
+      "category": "Aromatherapy",
+      "price": 369,
+      "currency": "INR",
+      "description": "Energizing eucalyptus oil for mental clarity and focus.",
+      "icon": "🍃",
+      "benefits": ["Mental Clarity", "Focus", "Freshness"],
+      "burn_time": "30-35 hours",
+      "wax_type": "Soy Wax",
+      "size": "180g",
+      "in_stock": true
+    },
+    {
+      "id": 7,
+      "name": "Honey Amber",
+      "category": "Sweet",
+      "price": 419,
+      "currency": "INR",
+      "description": "Luxurious blend of honey and warm amber for lasting fragrance.",
+      "icon": "🌟",
+      "benefits": ["Luxury", "Warmth", "Long-lasting"],
+      "burn_time": "35-45 hours",
+      "wax_type": "Soy Wax",
+      "size": "250g",
+      "in_stock": true
+    },
+    {
+      "id": 8,
+      "name": "Coffee & Cream",
+      "category": "Gourmand",
+      "price": 399,
+      "currency": "INR",
+      "description": "Rich coffee aroma with creamy vanilla undertones.",
+      "icon": "☕",
+      "benefits": ["Energizing", "Comfort", "Indulgence"],
+      "burn_time": "30-40 hours",
+      "wax_type": "Soy Wax",
+      "size": "200g",
+      "in_stock": true
+    }
+  ],
+  "categories": [
+    {
+      "name": "Aromatherapy",
+      "description": "Therapeutic candles for wellness"
+    },
+    {
+      "name": "Floral",
+      "description": "Beautiful flower-inspired fragrances"
+    },
+    {
+      "name": "Warm",
+      "description": "Cozy and comforting scents"
+    },
+    {
+      "name": "Fresh",
+      "description": "Refreshing and energizing fragrances"
+    },
+    {
+      "name": "Traditional",
+      "description": "Classic favorite scents"
+    },
+    {
+      "name": "Gourmand",
+      "description": "Delicious food-inspired aromas"
+    },
+    {
+      "name": "Sweet",
+      "description": "Gentle sweet fragrance blends"
+    }
+  ],
+  "features": [
+    {
+      "title": "100% Natural Wax",
+      "description": "Made with sustainable soy wax",
+      "icon": "leaf"
+    },
+    {
+      "title": "Premium Fragrance Oils",
+      "description": "High-quality imported oils",
+      "icon": "droplet"
+    },
+    {
+      "title": "Eco-friendly Packaging",
+      "description": "Recyclable and biodegradable materials",
+      "icon": "recycle"
+    },
+    {
+      "title": "Hand-Poured with Care",
+      "description": "Crafted with attention to detail",
+      "icon": "hands"
+    }
+  ]
+}
