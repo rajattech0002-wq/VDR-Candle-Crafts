@@ -76,6 +76,9 @@ body {
     color: var(--white);
     font-weight: 500;
     transition: color 0.3s ease;
+    display: block;
+    padding: 8px 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .nav-menu a:hover {
@@ -86,6 +89,17 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger:active {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .hamburger span {
@@ -94,6 +108,40 @@ body {
     background-color: var(--white);
     margin: 5px 0;
     transition: 0.3s;
+}
+
+/* Promotional Banner */
+.promo-banner {
+    background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);
+    padding: 15px 20px;
+    box-shadow: var(--shadow);
+    z-index: 999;
+}
+
+.promo-banner .container {
+    display: flex;
+    justify-content: center;
+}
+
+.promo-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.promo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.promo-item i {
+    font-size: 1.2rem;
 }
 
 /* Hero Section */
@@ -115,8 +163,8 @@ body {
 .hero-bg-video {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 50%;
     height: 100%;
     object-fit: cover;
     z-index: 1;
@@ -128,7 +176,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.85) 0%, rgba(109, 40, 217, 0.85) 100%);
+    background: linear-gradient(to right, rgba(124, 58, 237, 0.95) 0%, rgba(109, 40, 217, 0.7) 50%, rgba(109, 40, 217, 0) 100%);
     z-index: 2;
 }
 
@@ -146,11 +194,12 @@ body {
 }
 
 .hero-text {
-    flex: 1;
+    flex: 0 0 45%;
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding-left: 20px;
+    max-width: 50%;
 }
 
 .hero-text .hero-logo {
@@ -176,6 +225,12 @@ body {
     font-size: 1.3rem;
     margin: 0;
     opacity: 0.95;
+}
+
+.hero-text .btn {
+    align-self: flex-start;
+    max-width: 200px;
+    padding: 14px 28px;
 }
 
 .hero-videos-container {
@@ -216,6 +271,13 @@ body {
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    user-select: none;
+    /* Touch feedback */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+    transform: scale(0.98);
 }
 
 .btn-primary {
@@ -228,6 +290,10 @@ body {
     background-color: #fcd34d;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(251, 191, 36, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
 }
 
 .btn-secondary {
@@ -264,11 +330,16 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-card:active {
+    transform: translateY(-2px);
 }
 
 .product-image {
@@ -444,10 +515,19 @@ body {
     color: #7c3aed;
     text-decoration: none;
     font-weight: bold;
+    padding: 4px 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .info-item a:hover {
     text-decoration: underline;
+    color: #6d28d9;
+}
+
+.info-item a:active {
+    color: #581c87;
 }
 
 .contact-form input,
@@ -459,6 +539,19 @@ body {
     border-radius: 5px;
     font-family: inherit;
     font-size: 1rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+}
+
+.contact-form input {
+    border-radius: 8px;
+}
+
+.contact-form textarea {
+    border-radius: 8px;
+    resize: vertical;
+    min-height: 100px;
 }
 
 .contact-form input:focus,
@@ -466,6 +559,7 @@ body {
     outline: none;
     border-color: #7c3aed;
     box-shadow: 0 0 5px rgba(124, 58, 237, 0.3);
+    background-color: #fafafa;
 }
 
 .contact-form button {
@@ -495,10 +589,22 @@ body {
     color: var(--white);
     font-size: 1.5rem;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .social-links a:hover {
     color: #fbbf24;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:active {
+    transform: scale(0.95);
 }
 
 /* Responsive Design */
@@ -535,18 +641,27 @@ body {
         position: relative;
     }
 
+    .promo-content {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .promo-item {
+        font-size: 0.85rem;
+    }
+
     .hero {
         padding: 40px 20px;
         min-height: auto;
     }
 
     .hero-bg-video {
-        display: none;
+        width: 100%;
     }
 
     .hero-overlay {
         width: 100%;
-        background: linear-gradient(135deg, rgba(124, 58, 237, 0.95) 0%, rgba(109, 40, 217, 0.95) 100%);
+        background: linear-gradient(135deg, rgba(124, 58, 237, 0.88) 0%, rgba(109, 40, 217, 0.88) 100%);
     }
 
     .hero-content {
@@ -559,6 +674,13 @@ body {
     .hero-text {
         text-align: center;
         padding-left: 0;
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .hero-text .btn {
+        align-self: center;
+        max-width: 200px;
     }
 
     .hero-text .hero-logo {
@@ -612,6 +734,11 @@ body {
 }
 
 @media (max-width: 480px) {
+    html {
+        /* Prevent zoom on input focus (iOS) */
+        font-size: 16px;
+    }
+
     .hero-text h1 {
         font-size: 1.5rem;
     }
@@ -647,5 +774,113 @@ body {
 
     .products-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile touch-friendly buttons */
+    .btn {
+        padding: 14px 24px;
+        min-height: 44px;
+        min-width: 44px;
+        font-size: 1.05rem;
+    }
+
+    /* Better mobile form inputs */
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px;
+        padding: 14px;
+        border-radius: 8px;
+    }
+
+    /* Better product card spacing */
+    .product-card {
+        border-radius: 12px;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-info {
+        padding: 16px;
+    }
+
+    .product-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .product-price {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    /* Better mobile promo banner */
+    .promo-banner .container {
+        padding: 10px 15px;
+    }
+
+    .promo-item {
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+
+    .promo-item i {
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    /* Better contact section spacing */
+    .contact-info h3,
+    .contact-form h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .info-item {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    /* Footer mobile optimization */
+    .footer .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+    }
+
+    /* Improved section padding */
+    .products,
+    .about,
+    .contact {
+        padding: 50px 15px;
+    }
+
+    .products h2,
+    .about h2,
+    .contact h2 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+
+    /* Better about section mobile */
+    .about-logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Navigation brand mobile */
+    .nav-brand .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Hero section mobile spacing */
+    .hero {
+        padding: 30px 15px;
+        min-height: 500px;
     }
 }

@@ -47,11 +47,22 @@ function loadProducts() {
         .catch(error => console.error('Error loading products:', error));
 }
 
-// WhatsApp Order
+// WhatsApp Order (mobile-optimized)
 function orderOnWhatsApp(productName, productPrice) {
     const message = `Hello! I'm interested in ordering ${productName} (${productPrice}). Please share more details about this product.`;
-    const whatsappURL = `https://wa.me/c/917983158309?text=${encodeURIComponent(message)}`;
+    const whatsappURL = `https://wa.me/917983158309?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
+}
+
+// Prevent zoom on input focus (iOS Safari)
+function preventIOSZoom() {
+    document.addEventListener('touchstart', function(event) {
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+            document.body.addEventListener('touchmove', function(e) {
+                // Prevent zoom while typing
+            }, { passive: false });
+        }
+    });
 }
 
 // Video Background Autoplay
@@ -64,15 +75,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     loadProducts();
+    preventIOSZoom();
     
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('contactName').value;
-            const email = document.getElementById('contactEmail').value;
-            const message = document.getElementById('contactMessage').value;
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+            
+            // Validate inputs
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
             
             // Build WhatsApp message
             const whatsappMessage = `Hello VDR Candle Crafts!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
@@ -86,17 +104,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle with touch support
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
     if (hamburger) {
+        // Click event
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
         });
+        
+        // Touch event for better mobile response
+        hamburger.addEventListener('touchstart', function(e) {
+            // Add visual feedback
+            this.style.opacity = '0.7';
+        });
+        
+        hamburger.addEventListener('touchend', function(e) {
+            this.style.opacity = '1';
+        });
     }
     
-    // Smooth Scrolling
+    // Smooth Scrolling with mobile menu close
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
